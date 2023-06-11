@@ -1,14 +1,11 @@
 Couverture
 ===================================
 
-TEST
-
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+TEST 3
 
 .. note::
 
-   CECI EST UN TEST number 2
+   CECI EST UN TEST number 3
 
 Contents
 --------
