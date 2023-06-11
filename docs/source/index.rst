@@ -1,6 +1,7 @@
 Couverture
 ===================================
 
+TEST
 
 **Lumache** (/lu'make/) is a Python library for cooks and food lovers
 that creates recipes mixing random ingredients.
@@ -12,7 +13,7 @@ how to :ref:`installation` the project.
 
 .. note::
 
-   CECI EST UN TEST
+   CECI EST UN TEST number 2
 
 Contents
 --------
