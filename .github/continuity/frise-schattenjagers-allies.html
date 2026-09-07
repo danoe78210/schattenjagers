@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Les Schattenjagers - Frise des porteurs et allies</title>
+  <style>
+    :root {
+      --ink: #17212b;
+      --paper: #f4f0e7;
+      --mist: #dce4e2;
+      --blue: #16697a;
+      --blue-dark: #0d3b50;
+      --gold: #b56b25;
+      --rose: #a13d55;
+      --line: #aeb9b4;
+      --muted: #55646a;
+      --white: #fffdf8;
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--paper); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(22, 105, 122, .045) 1px, transparent 1px),
+        linear-gradient(rgba(22, 105, 122, .035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 28px 28px;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.45;
+    }
+
+    .page { width: min(1540px, calc(100% - 32px)); margin: 0 auto; }
+    header {
+      padding: 64px 0 38px;
+      border-bottom: 3px solid var(--ink);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+    }
+    .eyebrow, .section-kicker, .tag {
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .eyebrow { color: var(--rose); margin: 0 0 10px; }
+    h1 { font-size: clamp(2.4rem, 5vw, 5.6rem); line-height: .93; margin: 0; font-weight: 400; max-width: 920px; }
+    .subtitle { font-size: 1.18rem; max-width: 750px; color: var(--muted); margin: 22px 0 0; }
+    .seal { width: 130px; height: 130px; border: 2px solid var(--gold); border-radius: 50%; display: grid; place-items: center; color: var(--gold); text-align: center; padding: 16px; }
+    .seal strong { display: block; font-size: 2.25rem; line-height: 1; font-weight: 400; }
+
+    .legend { display: flex; gap: 18px; flex-wrap: wrap; padding: 20px 0; border-bottom: 1px solid var(--line); font-family: "Trebuchet MS", Verdana, sans-serif; font-size: .83rem; }
+    .legend span { display: inline-flex; align-items: center; gap: 8px; }
+    .swatch { display: inline-block; width: 12px; height: 12px; }
+    .swatch.hunter { background: var(--blue); border-radius: 50%; }
+    .swatch.ally { background: var(--gold); transform: rotate(45deg); }
+    .swatch.guard { border: 2px solid var(--rose); border-radius: 50%; }
+    .swatch.open { border: 1px dashed var(--muted); }
+
+    .notice { margin: 32px 0 0; padding: 15px 18px; border-left: 5px solid var(--rose); background: rgba(255, 253, 248, .72); color: #39464b; }
+    .notice strong { color: var(--ink); }
+
+    .timeline { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 145px minmax(0, 1fr); gap: 22px; margin: 46px 0 64px; }
+    .timeline { display: none; }
+    .aligned-timeline { margin: 46px 0 64px; border-top: 3px solid var(--ink); }
+    .aligned-head, .era-row { display: grid; grid-template-columns: minmax(0, 1fr) 150px minmax(0, 1fr); gap: 20px; }
+    .aligned-head { padding: 15px 0; font-family: "Trebuchet MS", Verdana, sans-serif; font-weight: 700; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; }
+    .aligned-head div:first-child { color: var(--blue-dark); }
+    .aligned-head div:nth-child(2) { text-align: center; color: var(--muted); }
+    .aligned-head div:last-child { color: var(--gold); }
+    .era-row { position: relative; padding: 18px 0 20px; border-top: 1px solid var(--line); align-items: start; }
+    .era-date { position: sticky; top: 0; z-index: 2; text-align: center; padding-top: 12px; color: var(--muted); font-family: "Trebuchet MS", Verdana, sans-serif; font-size: .73rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .era-date::before { content: ""; display: block; width: 12px; height: 12px; border-radius: 50%; margin: 0 auto 8px; background: var(--rose); box-shadow: 0 0 0 5px var(--paper); }
+    .mini-card { min-height: 110px; padding: 14px 15px; border: 1px solid var(--line); border-left: 6px solid var(--blue); background: rgba(255, 253, 248, .9); box-shadow: 3px 4px 0 rgba(23, 33, 43, .06); }
+    .mini-card.ally { border-left-color: var(--gold); }
+    .mini-card.guard { border-left-color: var(--rose); }
+    .mini-card.empty { min-height: 0; padding: 0; border: 0; background: transparent; box-shadow: none; }
+    .mini-card h3 { margin: 0; font-size: 1.12rem; font-weight: 400; line-height: 1.1; }
+    .mini-card p { margin: 5px 0 0; font-size: .84rem; color: var(--muted); }
+    .mini-card .mini-pass { color: var(--blue-dark); font-family: "Trebuchet MS", Verdana, sans-serif; font-size: .7rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
+    .mini-card.ally .mini-pass { color: #895016; }
+    .column-title { padding: 0 0 12px; margin: 0 0 22px; border-bottom: 2px solid currentColor; font-size: 1.55rem; font-weight: 400; }
+    .hunters .column-title { color: var(--blue-dark); }
+    .allies .column-title { color: var(--gold); }
+    .axis { position: relative; min-height: 2650px; }
+    .axis::before { content: ""; position: absolute; left: 50%; top: 62px; bottom: 0; width: 2px; background: var(--line); }
+    .era { position: relative; z-index: 1; display: block; text-align: center; margin: 0 0 228px; font-family: "Trebuchet MS", Verdana, sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .06em; color: var(--muted); }
+    .era span { background: var(--paper); padding: 5px 8px; border: 1px solid var(--line); }
+
+    .card { position: relative; background: rgba(255, 253, 248, .9); border: 1px solid var(--line); border-radius: 3px; padding: 16px 17px 14px; margin: 0 0 18px; box-shadow: 3px 4px 0 rgba(23, 33, 43, .08); }
+    .hunters .card { border-left: 6px solid var(--blue); }
+    .allies .card { border-left: 6px solid var(--gold); }
+    .card.guard { border-left-color: var(--rose); }
+    .card.open { border-style: dashed; border-left-color: var(--muted); color: var(--muted); box-shadow: none; }
+    .card h3 { margin: 0; font-size: 1.25rem; font-weight: 400; line-height: 1.08; }
+    .card .role { margin: 4px 0 10px; color: var(--muted); font-style: italic; font-size: .92rem; }
+    .card dl { margin: 0; display: grid; grid-template-columns: 98px 1fr; gap: 4px 8px; font-size: .86rem; }
+    .card dt { font-family: "Trebuchet MS", Verdana, sans-serif; font-size: .66rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+    .card dd { margin: 0; }
+    .pass { margin: 12px 0 0; padding-top: 10px; border-top: 1px solid #d9ded8; color: var(--blue-dark); font-size: .9rem; }
+    .pass strong { font-family: "Trebuchet MS", Verdana, sans-serif; font-size: .68rem; letter-spacing: .04em; text-transform: uppercase; }
+    .allies .pass { color: #895016; }
+
+    section.details { margin: 64px 0; }
+    .section-kicker { color: var(--rose); margin: 0 0 7px; }
+    h2 { font-size: clamp(1.8rem, 3vw, 3.2rem); line-height: 1; font-weight: 400; margin: 0 0 24px; }
+    .grid-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .note { padding: 18px; background: var(--mist); border-top: 4px solid var(--blue); }
+    .note h3 { margin: 0 0 8px; font-size: 1.08rem; font-weight: 400; }
+    .note p { margin: 0; font-size: .94rem; }
+
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--white); }
+    table { width: 100%; border-collapse: collapse; min-width: 880px; font-size: .88rem; }
+    th { background: var(--blue-dark); color: var(--white); font-family: "Trebuchet MS", Verdana, sans-serif; font-size: .72rem; letter-spacing: .04em; text-align: left; text-transform: uppercase; }
+    th, td { padding: 11px 12px; border-bottom: 1px solid #d9ded8; vertical-align: top; }
+    tr:nth-child(even) td { background: #f8f6f0; }
+    tr:last-child td { border-bottom: 0; }
+    .ally-table th { background: #7a491d; }
+    .status { font-family: "Trebuchet MS", Verdana, sans-serif; font-size: .67rem; letter-spacing: .04em; text-transform: uppercase; color: var(--blue-dark); }
+    footer { padding: 28px 0 54px; border-top: 2px solid var(--ink); color: var(--muted); font-size: .9rem; }
+
+    @media (max-width: 900px) {
+      header { grid-template-columns: 1fr; }
+      .seal { display: none; }
+      .timeline { grid-template-columns: 1fr; gap: 36px; }
+      .axis { display: none; }
+      .grid-notes { grid-template-columns: 1fr; }
+      .aligned-head { display: none; }
+      .aligned-timeline { border-top: 0; }
+      .era-row { grid-template-columns: 1fr; gap: 9px; padding: 20px 0; }
+      .era-date { position: static; text-align: left; padding: 0; }
+      .era-date::before { display: inline-block; margin: 0 8px 0 0; vertical-align: middle; }
+    }
+    @media print {
+      body { background: white; }
+      .page { width: 100%; }
+      .card { break-inside: avoid; box-shadow: none; }
+      .timeline { grid-template-columns: 1fr 1fr; }
+      .axis { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div>
+        <p class="eyebrow">Les Schattenjagers · continuite canonique</p>
+        <h1>La chaine des porteurs,<br>la constellation des allies.</h1>
+        <p class="subtitle">Frise de reference du sixieme diamant bleu. A gauche, les Schattenjagers et les porteuses. A droite, les allies humains, les archanges et les Gardiens Ritter.</p>
+      </div>
+      <div class="seal"><strong>VI</strong>diamant bleu<br>lignée terrestre</div>
+    </header>
+
+    <div class="legend" aria-label="Legende">
+      <span><i class="swatch hunter"></i> Porteuse du sixieme diamant</span>
+      <span><i class="swatch ally"></i> Allie humain ou archange</span>
+      <span><i class="swatch guard"></i> Gardien Ritter, depositaire non porteur</span>
+      <span><i class="swatch open"></i> Date ou identite non documentee</span>
+    </div>
+
+    <p class="notice"><strong>Regle de lecture.</strong> Les dates de passation sont des decisions de canon. Les dates de naissance, de deces et certains actes historiques restent parfois incertains : la frise les nomme comme tels au lieu de combler les lacunes.</p>
+
+    <section class="aligned-timeline" aria-label="Frise chronologique alignee">
+      <div class="aligned-head"><div>Schattenjagers et porteuses</div><div>Epoque</div><div>Allies, archanges et gardiens</div></div>
+      <div class="era-row"><div class="mini-card"><h3>Hatchepsout</h3><p>~1507 - ~1458 av. J.-C.</p><p class="mini-pass">Passation : ~1458, pretresse d'Hathor</p></div><div class="era-date">~1473 av. J.-C.</div><div class="mini-card empty"></div></div>
+      <div class="era-row"><div class="mini-card"><h3>Deborah</h3><p>Dates de vie inconnues.</p><p class="mini-pass">Passation : inconnue</p></div><div class="era-date">Fin XIIe / debut XIe s. av. J.-C.</div><div class="mini-card empty"></div></div>
+      <div class="era-row"><div class="mini-card"><h3>Sappho</h3><p>~630 - ~570 av. J.-C.</p><p class="mini-pass">Passation : inconnue</p></div><div class="era-date">~630 av. J.-C.</div><div class="mini-card empty"></div></div>
+      <div class="era-row"><div class="mini-card"><h3>Aspasie</h3><p>~470 - apres 429 av. J.-C.</p><p class="mini-pass">Passation : apres 429</p></div><div class="era-date">~470 av. J.-C.</div><div class="mini-card empty"></div></div>
+      <div class="era-row"><div class="mini-card"><h3>Livie Drusilla</h3><p>58 av. J.-C. - 29 apr. J.-C.</p><p class="mini-pass">Passation : 14 apr. J.-C.</p></div><div class="era-date">38 av. J.-C.</div><div class="mini-card empty"></div></div>
+      <div class="era-row"><div class="mini-card"><h3>Belisama et Priscille</h3><p>Dates de vie inconnues. Possession : 14 - apres 57.</p><p class="mini-pass">Passation : apres 57, hors d'Italie</p></div><div class="era-date">Ier siecle</div><div class="mini-card empty"></div></div>
+      <div class="era-row"><div class="mini-card"><h3>Helene</h3><p>~248/250 - 329/330</p><p class="mini-pass">Passation : 327-330</p></div><div class="era-date">IIIe - IVe s.</div><div class="mini-card ally"><h3>Georges</h3><p>Martyr de tradition, fin IIIe/debut IVe s. Dates inconnues.</p></div></div>
+      <div class="era-row"><div class="mini-card"><h3>Galla Placidia</h3><p>~388/392 - 450</p><p class="mini-pass">Passation : 450</p></div><div class="era-date">410 - 450</div><div class="mini-card empty"></div></div>
+      <div class="era-row"><div class="mini-card"><h3>Brigitte, Theodora et Hilda</h3><p>451-525 ; ~497/500-548 ; 614-680.</p><p class="mini-pass">Passations : 525, 548 et 680</p></div><div class="era-date">Ve - VIIe s.</div><div class="mini-card ally"><h3>Wu Zetian</h3><p>624 - 705. Alliee humaine non porteuse.</p></div></div>
+      <div class="era-row"><div class="mini-card"><h3>Irene et Alcuin</h3><p>~752-803 ; ~735-804.</p><p class="mini-pass">Passations : 793 et 804</p></div><div class="era-date">VIIIe - IXe s.</div><div class="mini-card ally"><h3>Fatima al-Fihri</h3><p>Dates inconnues. Fondation traditionnelle d'al-Qarawiyyin : 859.</p></div></div>
+      <div class="era-row"><div class="mini-card"><h3>Marozia, Hrotsvita et Brunhilde</h3><p>~890-apres 932 ; Hrotsvita, dates inconnues ; Brunhilde, fiction-canonique.</p><p class="mini-pass">Passations : 932, 978, vers 980</p></div><div class="era-date">Xe siecle</div><div class="mini-card ally"><h3>Avicenne</h3><p>980 - 1037. Archange elu en 2036, diamant bleu #4.</p></div></div>
+      <div class="era-row"><div class="mini-card"><h3>Lubna de Cordoue</h3><p>Dates de vie inconnues. Possession : vers 980 - 1002.</p><p class="mini-pass">Passation : 1002</p></div><div class="era-date">980 - 1002</div><div class="mini-card empty"></div></div>
+      <div class="era-row"><div class="mini-card"><h3>Hildegarde de Bingen</h3><p>1098 - 1179.</p><p class="mini-pass">Passation : 1179, a Alma</p></div><div class="era-date">XIe - XIIe s.</div><div class="mini-card ally"><h3>Otto et Anna</h3><p>Otto : ~1060-1139, fondateur des Ritter en 1122. Anna : 1083-~1153, alliee historienne.</p></div></div>
+      <div class="era-row"><div class="mini-card"><h3>Alma et relais anonymes</h3><p>1179 - 1219. Dates de vie et passation inconnues.</p></div><div class="era-date">Apres 1179</div><div class="mini-card ally"><h3>Tomoe Gozen</h3><p>Alliee de tradition epique, active dans le recit de Genpei : 1180-1185.</p></div></div>
+      <div class="era-row"><div class="mini-card"><h3>Mechthilde de Magdebourg</h3><p>~1207 - ~1282. Possession : 1219 - 1278.</p><p class="mini-pass">Passation : 1278, aux Gardiens Ritter</p></div><div class="era-date">XIIIe siecle</div><div class="mini-card guard"><h3>Dietrich et les Gardiens Ritter</h3><p>Dietrich, depositaire : 1278-1280. Garde collective depuis 1280.</p></div></div>
+    </section>
+
+    <section class="timeline" aria-label="Frise chronologique">
+      <div class="hunters">
+        <h2 class="column-title">Schattenjagers et porteuses</h2>
+
+        <article class="card"><h3>Hatchepsout</h3><p class="role">La Premiere Schattenjagerin</p><dl><dt>Vie</dt><dd>~1507 - ~1458 av. J.-C.</dd><dt>Possession</dt><dd>~1473 - ~1458 av. J.-C.</dd><dt>Heritage</dt><dd>Memoire architecturale, resistance a l'effacement, patience de la pierre.</dd></dl><p class="pass"><strong>Passation</strong> ~1458 av. J.-C., a une pretresse d'Hathor.</p></article>
+        <article class="card"><h3>Deborah</h3><p class="role">Juge et prophetesse, contexte biblique dispute</p><dl><dt>Vie</dt><dd>Inconnue</dd><dt>Possession</dt><dd>Fin du XIIe / debut du XIe s. av. J.-C.</dd><dt>Heritage</dt><dd>Vision des fils, memoire chantee.</dd></dl><p class="pass"><strong>Passation</strong> Inconnue.</p></article>
+        <article class="card"><h3>Sappho</h3><p class="role">Poetesse de Lesbos</p><dl><dt>Vie</dt><dd>~630 - ~570 av. J.-C.</dd><dt>Possession</dt><dd>Vers 630 av. J.-C. - date inconnue</dd><dt>Heritage</dt><dd>Resonance poetique, archive fragmentaire.</dd></dl><p class="pass"><strong>Passation</strong> A une depositaire anonyme, date inconnue.</p></article>
+        <article class="card"><h3>Aspasie</h3><p class="role">Oratrice de Milet et d'Athenes</p><dl><dt>Vie</dt><dd>~470 - apres 429 av. J.-C.</dd><dt>Possession</dt><dd>Vers 470 - apres 429 av. J.-C.</dd><dt>Heritage</dt><dd>Memoire rhetorique, parole plurielle.</dd></dl><p class="pass"><strong>Passation</strong> Apres 429 av. J.-C., hors d'Athenes.</p></article>
+        <article class="card"><h3>Livie Drusilla</h3><p class="role">Conseillere du Principat</p><dl><dt>Vie</dt><dd>58 av. J.-C. - 29 apr. J.-C.</dd><dt>Possession</dt><dd>38 av. J.-C. - 14 apr. J.-C.</dd><dt>Heritage</dt><dd>Lecture des dependances, conseil sans mandat.</dd></dl><p class="pass"><strong>Passation</strong> 14 apr. J.-C., vers Massalia.</p></article>
+        <article class="card"><h3>Belisama</h3><p class="role">Nom rituel d'une gardienne voconce</p><dl><dt>Vie</dt><dd>Inconnue</dd><dt>Possession</dt><dd>14 - milieu du Ier s. apr. J.-C.</dd><dt>Heritage</dt><dd>Ecoute des lieux, soin distribue.</dd></dl><p class="pass"><strong>Passation</strong> Milieu du Ier siecle, a une depositaire italienne.</p></article>
+        <article class="card"><h3>Priscille</h3><p class="role">Tisseuse des reseaux domestiques</p><dl><dt>Vie</dt><dd>Inconnue</dd><dt>Possession</dt><dd>49 - apres 57</dd><dt>Heritage</dt><dd>Vision des liens, parole completee.</dd></dl><p class="pass"><strong>Passation</strong> Apres 57, hors d'Italie.</p></article>
+        <article class="card"><h3>Helene</h3><p class="role">Mere de Constantin</p><dl><dt>Vie</dt><dd>~248/250 - 329/330</dd><dt>Possession</dt><dd>306 - 327/330</dd><dt>Heritage</dt><dd>Discernement du seuil, archive discrete.</dd></dl><p class="pass"><strong>Passation</strong> 327-330, hors de la cour.</p></article>
+        <article class="card"><h3>Galla Placidia</h3><p class="role">Regente de l'Empire d'Occident</p><dl><dt>Vie</dt><dd>~388/392 - 450</dd><dt>Possession</dt><dd>410 - 450</dd><dt>Heritage</dt><dd>Cartographie des consequences, architecture de relais.</dd></dl><p class="pass"><strong>Passation</strong> 450, a une depositaire anonyme.</p></article>
+        <article class="card"><h3>Brigitte de Kildare</h3><p class="role">Fondatrice irlandaise, tradition hagiographique</p><dl><dt>Vie</dt><dd>451 - 525, tradition</dd><dt>Possession</dt><dd>451 - 525</dd><dt>Heritage</dt><dd>Fondation hospitaliere, soin communautaire.</dd></dl><p class="pass"><strong>Passation</strong> 525, vers une depositaire northumbrienne.</p></article>
+        <article class="card"><h3>Theodora</h3><p class="role">Imperatrice des seuils</p><dl><dt>Vie</dt><dd>~497/500 - 548</dd><dt>Possession</dt><dd>527 - 548</dd><dt>Heritage</dt><dd>Justice des seuils, decision sous pression.</dd></dl><p class="pass"><strong>Passation</strong> 548, hors de la cour.</p></article>
+        <article class="card"><h3>Hilda de Whitby</h3><p class="role">Mediatrice et abbesse northumbrienne</p><dl><dt>Vie</dt><dd>614 - 680</dd><dt>Possession</dt><dd>647 - 680</dd><dt>Heritage</dt><dd>Mediation patiente, pedagogie hospitaliere.</dd></dl><p class="pass"><strong>Passation</strong> 680, hors de Whitby.</p></article>
+        <article class="card"><h3>Irene l'Athenienne</h3><p class="role">Souveraine des visages</p><dl><dt>Vie</dt><dd>~752 - 803</dd><dt>Possession</dt><dd>780 - 793</dd><dt>Heritage</dt><dd>Discernement des visages, restauration de la beaute.</dd></dl><p class="pass"><strong>Passation</strong> 793, a une messagere northumbrienne.</p></article>
+        <article class="card"><h3>Alcuin d'York</h3><p class="role">Gardien des mots</p><dl><dt>Vie</dt><dd>~735 - 804</dd><dt>Possession</dt><dd>793 - 804</dd><dt>Heritage</dt><dd>Clarte scripturale, memoire organisee.</dd></dl><p class="pass"><strong>Passation</strong> 804, a Tours, vers une depositaire anonyme.</p></article>
+        <article class="card"><h3>Marozia</h3><p class="role">Dame du Latran</p><dl><dt>Vie</dt><dd>~890 - apres 932</dd><dt>Possession</dt><dd>910 - 932</dd><dt>Heritage</dt><dd>Lecture des compromis, verite des dependances.</dd></dl><p class="pass"><strong>Passation</strong> 932, a une depositaire romaine.</p></article>
+        <article class="card"><h3>Hrotsvita de Gandersheim</h3><p class="role">Voix de la chanceliere</p><dl><dt>Vie</dt><dd>Inconnue ; active vers 960-980</dd><dt>Possession</dt><dd>960 - 978</dd><dt>Heritage</dt><dd>Theatre des voix, lecture des cadres.</dd></dl><p class="pass"><strong>Passation</strong> 978, a Brunhilde.</p></article>
+        <article class="card"><h3>Brunhilde</h3><p class="role">Guerisseuse saxonne fiction-canonique</p><dl><dt>Vie</dt><dd>Inconnue - vers 980</dd><dt>Possession</dt><dd>978 - vers 980</dd><dt>Heritage</dt><dd>Memoire des simples, urgence de transmettre.</dd></dl><p class="pass"><strong>Passation</strong> Vers 980, a une depositaire anonyme.</p></article>
+        <article class="card"><h3>Lubna de Cordoue</h3><p class="role">Gardienne des catalogues</p><dl><dt>Vie</dt><dd>Inconnue</dd><dt>Possession</dt><dd>Vers 980 - 1002</dd><dt>Heritage</dt><dd>Cartographie des copies, savoir en traduction.</dd></dl><p class="pass"><strong>Passation</strong> 1002, vers un relais anonyme au nord.</p></article>
+        <article class="card"><h3>Hildegarde de Bingen</h3><p class="role">Miroir terrestre de Nunael</p><dl><dt>Vie</dt><dd>1098 - 1179</dd><dt>Possession</dt><dd>1098 - 1179</dd><dt>Heritage</dt><dd>Resonance : amplifie les voix opprimees.</dd></dl><p class="pass"><strong>Passation</strong> 1179, a Alma.</p></article>
+        <article class="card open"><h3>Alma et relais anonymes</h3><p class="role">Continuation post-Hildegarde</p><dl><dt>Vie</dt><dd>Inconnue</dd><dt>Possession</dt><dd>1179 - 1219, partiellement ouverte</dd><dt>Statut</dt><dd>Alma recoit le diamant ; le relais vers Mechthilde reste a preciser.</dd></dl><p class="pass"><strong>Passation</strong> Inconnue.</p></article>
+        <article class="card"><h3>Mechthilde de Magdebourg</h3><p class="role">Voix vernaculaire</p><dl><dt>Vie</dt><dd>~1207 - ~1282</dd><dt>Possession</dt><dd>1219 - 1278</dd><dt>Heritage</dt><dd>Parole vernaculaire, discernement mystique.</dd></dl><p class="pass"><strong>Passation</strong> 1278, aux Gardiens Ritter de Rittersberg.</p></article>
+      </div>
+
+      <div class="axis" aria-hidden="true">
+        <p class="era"><span>Antiquite</span></p>
+        <p class="era"><span>Empire romain</span></p>
+        <p class="era"><span>Haut Moyen Age</span></p>
+        <p class="era"><span>Moyen Age</span></p>
+      </div>
+
+      <div class="allies">
+        <h2 class="column-title">Allies, archanges et gardiens</h2>
+        <article class="card"><h3>Georges</h3><p class="role">Martyr de tradition, allie ponctuel</p><dl><dt>Vie</dt><dd>Inconnue ; fin IIIe/debut IVe siecle</dd><dt>Statut</dt><dd>Allie humain non porteur. La legende du dragon est medievale.</dd></dl></article>
+        <article class="card"><h3>Wu Zetian</h3><p class="role">Imperatrice de la dynastie Zhou</p><dl><dt>Vie</dt><dd>624 - 705</dd><dt>Statut</dt><dd>Alliee humaine inspiree par Nunael, non porteuse.</dd><dt>Limite</dt><dd>Ses violences de cour ne sont pas justifiees par le canon.</dd></dl></article>
+        <article class="card"><h3>Fatima al-Fihri</h3><p class="role">Fondatrice traditionnelle d'al-Qarawiyyin</p><dl><dt>Vie</dt><dd>Inconnue</dd><dt>Jalon</dt><dd>859 : fondation traditionnelle de la mosquee a Fes.</dd><dt>Statut</dt><dd>Alliee humaine non porteuse du savoir partage.</dd></dl></article>
+        <article class="card"><h3>Avicenne</h3><p class="role">Medecin philosophe, archange du savoir</p><dl><dt>Vie</dt><dd>980 - 1037</dd><dt>Jalon</dt><dd>2036 : election comme archange, reception du diamant bleu #4.</dd><dt>Role</dt><dd>Assiste les Thaumaturges du Refuge avec un discernement therapeutique.</dd></dl></article>
+        <article class="card"><h3>Otto de Bamberg</h3><p class="role">Fondateur des Ritter</p><dl><dt>Vie</dt><dd>~1060 - 1139</dd><dt>Jalon</dt><dd>1122 : fondation fiction-canonique des Ritter.</dd><dt>Statut</dt><dd>Allie humain non porteur ; la fraternite est distincte de la lignee.</dd></dl></article>
+        <article class="card"><h3>Anna Comnene</h3><p class="role">Historienne de la Pourpre</p><dl><dt>Vie</dt><dd>1083 - ~1153</dd><dt>Oeuvre</dt><dd>L'*Alexiade*, recit savant et partisan du regne d'Alexis Ier.</dd><dt>Statut</dt><dd>Alliee humaine de la memoire, non porteuse.</dd></dl></article>
+        <article class="card"><h3>Tomoe Gozen</h3><p class="role">Guerriere de tradition epique</p><dl><dt>Vie</dt><dd>Inconnue</dd><dt>Jalon</dt><dd>Active dans le recit de Genpei, 1180-1185.</dd><dt>Statut</dt><dd>Alliee humaine non porteuse ; le destin apres Awazu est ouvert.</dd></dl></article>
+        <article class="card guard"><h3>Dietrich Ritter</h3><p class="role">Premier depositaire nomme</p><dl><dt>Vie</dt><dd>Inconnue - 1280</dd><dt>Garde</dt><dd>1278 - 1280, pour les Gardiens Ritter.</dd><dt>Statut</dt><dd>Non porteur : organise une garde collective a Rittersberg.</dd></dl></article>
+        <article class="card guard"><h3>Gardiens Ritter</h3><p class="role">Garde collective du diamant</p><dl><dt>Periode</dt><dd>Depuis 1280, jusqu'a une transmission future.</dd><dt>Lieu</dt><dd>Rittersberg, puis localisation a documenter.</dd><dt>Statut</dt><dd>Depositaire collectif, non porteur et sans pouvoir surnaturel.</dd></dl></article>
+        <article class="card open"><h3>Gabriel Knight</h3><p class="role">Dernier heritier connu</p><dl><dt>Vie</dt><dd>Inconnue</dd><dt>Statut</dt><dd>Heritier contemporain connu ; chaine materielle precise a documenter.</dd></dl></article>
+      </div>
+    </section>
+
+    <section class="details">
+      <p class="section-kicker">Transmission et limites</p>
+      <h2>Ce que la frise affirme. Ce qu'elle laisse ouvert.</h2>
+      <div class="grid-notes">
+        <article class="note"><h3>Une seule chaine</h3><p>Le sixieme diamant est cree en 2036, depose en 1473 av. J.-C. et transmis par des personnes, des relais anonymes et une garde Ritter. Aucun autre diamant d'archange ne rejoint cette ligne.</p></article>
+        <article class="note"><h3>La garde n'est pas la possession</h3><p>Dietrich et les Gardiens Ritter protegent le diamant apres Mechthilde. Ils n'en heritent ni pouvoir ni statut de Schattenjager.</p></article>
+        <article class="note"><h3>Les sources ne sont pas le canon</h3><p>Les traditions sur Deborah, Sappho, Hrotsvita, Lubna, Tomoe ou certaines vies de saintes sont preservees comme traditions, non comme biographies closes.</p></article>
+      </div>
+    </section>
+
+    <section class="details">
+      <p class="section-kicker">Registre complet</p>
+      <h2>Table des porteuses et des passations</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Porteuse</th><th>Naissance</th><th>Deces</th><th>Possession</th><th>Passation</th><th>Statut</th></tr></thead>
+          <tbody>
+            <tr><td>Hatchepsout</td><td>~1507 av. J.-C.</td><td>~1458 av. J.-C.</td><td>~1473 - ~1458 av. J.-C.</td><td>~1458, pretresse d'Hathor</td><td class="status">Canonique romanesque</td></tr>
+            <tr><td>Deborah</td><td>Inconnue</td><td>Inconnue</td><td>Fin XIIe / debut XIe s. av. J.-C.</td><td>Inconnue</td><td class="status">Canonique, contexte dispute</td></tr>
+            <tr><td>Sappho</td><td>~630 av. J.-C.</td><td>~570 av. J.-C.</td><td>Vers 630 - date inconnue</td><td>Depositaire anonyme</td><td class="status">Canonique, biographie lacunaire</td></tr>
+            <tr><td>Aspasie</td><td>~470 av. J.-C.</td><td>Apres 429 av. J.-C.</td><td>~470 - apres 429</td><td>Hors d'Athenes</td><td class="status">Fiction-canonique</td></tr>
+            <tr><td>Livie Drusilla</td><td>58 av. J.-C.</td><td>29 apr. J.-C.</td><td>38 av. J.-C. - 14</td><td>14, vers Massalia</td><td class="status">Fiction-canonique</td></tr>
+            <tr><td>Belisama</td><td>Inconnue</td><td>Inconnue</td><td>14 - milieu du Ier s.</td><td>Depositaire italienne</td><td class="status">Fiction-canonique</td></tr>
+            <tr><td>Priscille</td><td>Inconnue</td><td>Inconnue</td><td>49 - apres 57</td><td>Hors d'Italie</td><td class="status">Canonique romanesque</td></tr>
+            <tr><td>Helene</td><td>~248/250</td><td>329/330</td><td>306 - 327/330</td><td>Hors de la cour</td><td class="status">Canonique romanesque</td></tr>
+            <tr><td>Galla Placidia</td><td>~388/392</td><td>450</td><td>410 - 450</td><td>450, depositaire anonyme</td><td class="status">Canonique romanesque</td></tr>
+            <tr><td>Brigitte de Kildare</td><td>451, tradition</td><td>525, tradition</td><td>451 - 525</td><td>525, relais northumbrien</td><td class="status">Canonique romanesque</td></tr>
+            <tr><td>Theodora</td><td>~497/500</td><td>548</td><td>527 - 548</td><td>548, hors de la cour</td><td class="status">Canonique romanesque</td></tr>
+            <tr><td>Hilda de Whitby</td><td>614</td><td>680</td><td>647 - 680</td><td>680, depositaire anonyme</td><td class="status">Canonique romanesque</td></tr>
+            <tr><td>Irene l'Athenienne</td><td>~752</td><td>803</td><td>780 - 793</td><td>793, messagere northumbrienne</td><td class="status">Fiction-canonique</td></tr>
+            <tr><td>Alcuin d'York</td><td>~735</td><td>804</td><td>793 - 804</td><td>804, depositaire a Tours</td><td class="status">Canonique romanesque</td></tr>
+            <tr><td>Marozia</td><td>~890</td><td>Apres 932</td><td>910 - 932</td><td>932, depositaire romaine</td><td class="status">Fiction-canonique</td></tr>
+            <tr><td>Hrotsvita</td><td>Inconnue</td><td>Inconnue</td><td>960 - 978</td><td>978, Brunhilde</td><td class="status">Fiction-canonique</td></tr>
+            <tr><td>Brunhilde</td><td>Inconnue</td><td>Vers 980</td><td>978 - vers 980</td><td>Depositaire anonyme</td><td class="status">Fiction-canonique</td></tr>
+            <tr><td>Lubna de Cordoue</td><td>Inconnue</td><td>Inconnue</td><td>Vers 980 - 1002</td><td>1002, relais au nord</td><td class="status">Fiction-canonique</td></tr>
+            <tr><td>Hildegarde de Bingen</td><td>1098</td><td>1179</td><td>1098 - 1179</td><td>1179, Alma</td><td class="status">Canonique romanesque</td></tr>
+            <tr><td>Alma</td><td>Inconnue</td><td>Inconnue</td><td>1179 - 1219, relais ouvert</td><td>Inconnue</td><td class="status">Lacune controlee</td></tr>
+            <tr><td>Mechthilde de Magdebourg</td><td>~1207</td><td>~1282</td><td>1219 - 1278</td><td>1278, Gardiens Ritter</td><td class="status">Fiction-canonique</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="details">
+      <p class="section-kicker">Constellation des allies</p>
+      <h2>Les personnages hors de la chaine du sixieme diamant</h2>
+      <div class="table-wrap">
+        <table class="ally-table">
+          <thead><tr><th>Allie</th><th>Naissance</th><th>Deces</th><th>Jalon canonique</th><th>Limite</th></tr></thead>
+          <tbody>
+            <tr><td>Georges</td><td>Inconnue</td><td>Inconnue</td><td>Allie ponctuel, fin IIIe/debut IVe s. selon tradition.</td><td>Non porteur ; dragon medieval, non fait historique fixe.</td></tr>
+            <tr><td>Wu Zetian</td><td>624</td><td>705</td><td>Alliee humaine inspiree par Nunael.</td><td>Non porteuse ; sa politique de cour garde ses responsabilites humaines.</td></tr>
+            <tr><td>Fatima al-Fihri</td><td>Inconnue</td><td>Inconnue</td><td>Fondation traditionnelle d'al-Qarawiyyin en 859.</td><td>Non porteuse ; details biographiques et institutionnels lacunaires.</td></tr>
+            <tr><td>Avicenne</td><td>980</td><td>1037</td><td>Archange elu en 2036 ; diamant bleu #4.</td><td>Ne porte aucun diamant durant sa vie humaine.</td></tr>
+            <tr><td>Otto de Bamberg</td><td>~1060</td><td>1139</td><td>Fonde les Ritter en 1122.</td><td>Non porteur ; pas de pouvoirs ni d'ordre de douze membres fixe.</td></tr>
+            <tr><td>Anna Comnene</td><td>1083</td><td>~1153</td><td>Alliee humaine de la memoire ; autrice de l'*Alexiade*.</td><td>Non porteuse ; son oeuvre est situee et partisane.</td></tr>
+            <tr><td>Tomoe Gozen</td><td>Inconnue</td><td>Inconnue</td><td>Alliee dans les interstices de la tradition de Genpei.</td><td>Non porteuse ; biographie et destin apres Awazu ouverts.</td></tr>
+            <tr><td>Dietrich Ritter</td><td>Inconnue</td><td>1280</td><td>Premier depositaire nomme, 1278-1280.</td><td>Gardien non porteur ; la garde est collective, non hereditaire.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      Document de travail canonique. Voir aussi <strong>registre-sixieme-diamant.md</strong>, <strong>chronologie-generale.md</strong> et les fiches individuelles dans <strong>.github/bible/personnages</strong>.
+    </footer>
+  </main>
+</body>
+</html>
