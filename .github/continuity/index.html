@@ -3,11 +3,116 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="0; url=frise-schattenjagers-allies.html">
-    <title>Les Schattenjagers - Continuite</title>
-    <script>location.replace('frise-schattenjagers-allies.html');</script>
+    <meta name="description" content="Sommaire des documents et outils du projet Les Schattenjagers.">
+    <title>Les Schattenjagers - Sommaire</title>
+    <style>
+      :root {
+        --ink: #17212b;
+        --paper: #f4f0e7;
+        --mist: #dce4e2;
+        --blue: #16697a;
+        --gold: #b56b25;
+        --rose: #a13d55;
+        --line: #aeb9b4;
+        --muted: #55646a;
+        --white: #fffdf8;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          linear-gradient(90deg, rgba(22, 105, 122, .045) 1px, transparent 1px),
+          linear-gradient(rgba(22, 105, 122, .035) 1px, transparent 1px),
+          var(--paper);
+        background-size: 28px 28px;
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.5;
+      }
+      .page { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+      header { padding: 64px 0 34px; border-bottom: 3px solid var(--ink); }
+      .eyebrow, .label {
+        color: var(--rose);
+        font-family: "Trebuchet MS", Verdana, sans-serif;
+        font-size: .73rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+      .eyebrow { margin: 0 0 10px; }
+      h1 { margin: 0; font-size: clamp(2.6rem, 7vw, 5.5rem); font-weight: 400; line-height: .95; }
+      .intro { max-width: 720px; margin: 22px 0 0; color: var(--muted); font-size: 1.12rem; }
+      main { padding: 40px 0 64px; }
+      .section { margin-top: 46px; }
+      h2 { margin: 0 0 16px; padding-bottom: 10px; border-bottom: 2px solid var(--ink); color: var(--blue); font-size: 1.65rem; font-weight: 400; }
+      .links { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+      a.item {
+        display: block;
+        min-height: 122px;
+        padding: 17px;
+        color: var(--ink);
+        background: rgba(255, 253, 248, .9);
+        border: 1px solid var(--line);
+        border-left: 6px solid var(--blue);
+        box-shadow: 3px 4px 0 rgba(23, 33, 43, .08);
+        text-decoration: none;
+      }
+      a.item:hover, a.item:focus { outline: 3px solid rgba(181, 107, 37, .35); outline-offset: 2px; }
+      a.item.gold { border-left-color: var(--gold); }
+      a.item.rose { border-left-color: var(--rose); }
+      .item strong { display: block; font-size: 1.16rem; font-weight: 400; line-height: 1.15; }
+      .item span { display: block; margin-top: 8px; color: var(--muted); font-family: "Trebuchet MS", Verdana, sans-serif; font-size: .8rem; line-height: 1.35; }
+      .notice { margin-top: 18px; padding: 15px 18px; border-left: 5px solid var(--rose); background: rgba(255, 253, 248, .72); color: #39464b; }
+      footer { padding: 26px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+      footer a { color: var(--blue); }
+    </style>
   </head>
   <body>
-    <p>Ouverture de la <a href="frise-schattenjagers-allies.html">frise des Schattenjagers</a>.</p>
+    <div class="page">
+      <header>
+        <p class="eyebrow">Archive narrative</p>
+        <h1>Les Schattenjagers</h1>
+        <p class="intro">Sommaire des plans, registres de continuité et outils d'écriture de la saga.</p>
+      </header>
+      <main>
+        <section class="section">
+          <p class="label">Continuité</p>
+          <h2>Registres du canon</h2>
+          <div class="links">
+            <a class="item" href="frise-schattenjagers-allies.html"><strong>Frise des porteurs et alliés</strong><span>Chronologie visuelle de la lignée et de ses relais.</span></a>
+            <a class="item" href="https://github.com/danoe78210/schattenjagers/blob/master/.github/continuity/registre-sixieme-diamant.md"><strong>Registre du sixième diamant</strong><span>Détenteurs, transmissions et lacunes volontaires.</span></a>
+            <a class="item" href="https://github.com/danoe78210/schattenjagers/blob/master/.github/continuity/tracking-evenements.md"><strong>Suivi des événements</strong><span>Chronologie narrative et conséquences canoniques.</span></a>
+            <a class="item" href="https://github.com/danoe78210/schattenjagers/blob/master/.github/continuity/tracking-objets.md"><strong>Suivi des objets</strong><span>État, localisation et possesseurs des artefacts.</span></a>
+            <a class="item" href="https://github.com/danoe78210/schattenjagers/blob/master/.github/continuity/carnac.md"><strong>Les pierres de Carnac</strong><span>Canon de travail du lieu fondateur et du cristal vert.</span></a>
+            <a class="item" href="https://github.com/danoe78210/schattenjagers/tree/master/.github/continuity"><strong>Dossier continuité complet</strong><span>Accès à tous les documents de cohérence.</span></a>
+          </div>
+        </section>
+        <section class="section">
+          <p class="label">Plans et lecture</p>
+          <h2>Architecture du tome 2</h2>
+          <div class="links">
+            <a class="item gold" href="https://github.com/danoe78210/schattenjagers/blob/master/Sources/Plan.md"><strong>Plan général</strong><span>Document directeur des sources de travail.</span></a>
+            <a class="item gold" href="https://github.com/danoe78210/schattenjagers/blob/master/Sources/Plan_Tome2_Actes_et_Chapitres.md"><strong>Plan du tome 2</strong><span>Actes et chapitres de Hildegarde.</span></a>
+            <a class="item gold" href="https://github.com/danoe78210/schattenjagers/blob/master/export/narratif.md"><strong>Architecture narrative</strong><span>Piliers dramatiques et stratégie cosmique.</span></a>
+            <a class="item gold" href="https://github.com/danoe78210/schattenjagers/blob/master/export/Plan_Tome2_Actes_et_Chapitres.md"><strong>Plan directeur révisé</strong><span>Fresque épique, histoire et suspense.</span></a>
+            <a class="item gold" href="https://github.com/danoe78210/schattenjagers/tree/master/export"><strong>Dossier export complet</strong><span>Documents consolidés destinés à la lecture.</span></a>
+          </div>
+        </section>
+        <section class="section">
+          <p class="label">Atelier</p>
+          <h2>Écriture et orchestration</h2>
+          <div class="links">
+            <a class="item rose" href="https://github.com/danoe78210/schattenjagers/blob/master/README.md"><strong>Présentation du dépôt</strong><span>Rôle, organisation et principes de travail.</span></a>
+            <a class="item rose" href="https://github.com/danoe78210/schattenjagers/blob/master/.github/AGENTS.md"><strong>Registre des agents</strong><span>Rôles de Danoë, Wilfried et des agents spécialisés.</span></a>
+            <a class="item rose" href="https://github.com/danoe78210/schattenjagers/tree/master/.github/agents"><strong>Fiches des agents</strong><span>Prompts et périmètres de chaque intervenant.</span></a>
+            <a class="item rose" href="https://github.com/danoe78210/schattenjagers/tree/master/.github/skills"><strong>Skills d'écriture</strong><span>Style, canon, histoire, tension et continuité.</span></a>
+            <a class="item rose" href="https://github.com/danoe78210/schattenjagers/tree/master/.github/workflows"><strong>Workflows narratifs</strong><span>Planification, rédaction, relecture et intégration.</span></a>
+            <a class="item rose" href="https://github.com/danoe78210/schattenjagers"><strong>Dépôt GitHub</strong><span>Vue d'ensemble et historique de toutes les ressources.</span></a>
+          </div>
+          <p class="notice"><strong>Note de lecture :</strong> les documents sont des matériaux de travail évolutifs. Leur statut canonique est indiqué dans chaque registre.</p>
+        </section>
+      </main>
+      <footer>Les Schattenjagers · <a href="https://github.com/danoe78210/schattenjagers">GitHub</a></footer>
+    </div>
   </body>
 </html>
