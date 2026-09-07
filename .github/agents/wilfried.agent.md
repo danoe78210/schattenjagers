@@ -26,6 +26,12 @@ Signale les anachronismes, les détails historiquement invraisemblables et les a
 ### @mecanique-tension (lecteur)
 Évalue la progression dramatique, les enjeux, les révélations, les indices, les bascules et les chutes. Juge l'intérêt de lecture sans confondre intensité et accumulation d'effets.
 
+### @dramaturgie-tchekhovienne (lecteur optionnel)
+À utiliser quand une scène humaine paraît trop explicative ou frontale : vérifier le sous-texte, le hors-champ, les objets-thèmes, les sons sourcés, les silences et les dialogues légèrement décalés.
+
+### @minimalisme-ozu (lecteur optionnel)
+À utiliser pour les scènes de départ, deuil, adieu ou transmission : vérifier que l'ellipse, les objets-relais, les lieux vides et les réactions silencieuses renforcent l'émotion sans frustrer la promesse narrative.
+
 ### @structure-chapitre (lecteur)
 Vérifie que l'ouverture, le développement, la crise et la résolution servent un arc lisible, vivant et porteur de conséquences.
 

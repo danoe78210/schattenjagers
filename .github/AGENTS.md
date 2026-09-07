@@ -21,9 +21,17 @@ Garant du style, de la vision et de la cohérence du roman. Réécrit TOUTES les
 - `@structure-chapitre` (propriétaire) — arc narratif du chapitre en 5 phases
 - `@plan-chapitre` (propriétaire) — structuration en sections avec chutes
 - `@frameworks-narratifs` (utilisateur) — référence pour choisir le framework adapté à chaque chapitre
+- `@etudes-cas-americains` (optionnel) — mécanismes comparatifs pour valeurs, duos, motifs, révélations et révisions ; appel ciblé à faible coût
+- `@personnages-et-conflits` (optionnel) — trois dimensions, désir, croyance erronée, adversaire, progression et diagnostic de scène
+- `@dialogues-et-sous-texte` (optionnel) — réplique-action, exposition, voix, silence et diagnostic des scènes dialoguées
+- `@premisse-theme-noyau` (optionnel) — prémisse, idée directrice, désir/croyance, point de vue et noyau dramatique
+- `@fabrication-scene` (optionnel) — bascule de valeur, beats, lieu, objet, suspense, rythme et diagnostic d'une scène
+- `@structure-recits` (optionnel) — hiérarchie récit/scène, ancres, séquences, complications, climax et lignes multiples
 - `@rigueur-historique` (validateur) — vérification finale
 - `@cartographie-politique` (fusionneur) — intégration des intrigues de pouvoir
 - `@mecanique-tension` (fusionneur) — intégration de la tension narrative
+- `@dramaturgie-tchekhovienne` (optionnelle) — sous-texte, hors-champ, gestes ordinaires et dialogues décalés pour les scènes humaines lentes ou ambiguës
+- `@minimalisme-ozu` (optionnelle) — ellipse, objets-relais, départs, deuils et lieux vides pour les scènes de transmission ou d'adieu
 - `@appareil-documentaire` (rédacteur final) — annexes et notes de bas de page
 - `@orchestration` (propriétaire) — distribution des tâches aux autres agents
 
@@ -45,6 +53,12 @@ Apporte complexité politique, ambiguïté morale et architecture des rapports d
 - `@plan-chapitre` (suggère) — propositions de structuration
 - `@structure-chapitre` (suggère) — positionnement des retournements dans l'arc
 - `@frameworks-narratifs` (utilisateur) — référence pour les structures politiques (Story Grid + Freytag)
+- `@etudes-cas-americains` (optionnel) — duos de pouvoir, information asymétrique et circulation des valeurs
+- `@personnages-et-conflits` (optionnel) — opposition liée, ressources adverses et conflits de pouvoir
+- `@dialogues-et-sous-texte` (optionnel) — dialogues de cour, sous-texte et stratégies de parole
+- `@premisse-theme-noyau` (optionnel) — prémisses de chapitres, contre-valeurs et fins causées par les choix
+- `@fabrication-scene` (optionnel) — scène de pouvoir, scène de transmission, lieu contraignant et sortie précoce
+- `@structure-recits` (optionnel) — architecture de chapitre, deuxième acte, sous-intrigues et résolution
 
 **Livrables** : carte des motivations, rapport de force, retournements possibles, conséquences durables, recommandation de dosage, positionnement dans l'arc du chapitre.
 
@@ -63,6 +77,12 @@ Garantit l'exactitude historique et propose l'infiltration naturelle du fantasti
 - `@cartographie-politique` (cadre) — contexte historique des rapports de pouvoir
 - `@structure-chapitre` (suggère) — positionnement des révélations historiques
 - `@frameworks-narratifs` (utilisateur) — référence pour les structures historiques (Freytag, Three-Act)
+- `@etudes-cas-americains` (optionnel) — personnages avant événements, motifs et récits de mémoire
+- `@personnages-et-conflits` (optionnel) — personnages historiques, pression, choix et responsabilité humaine
+- `@dialogues-et-sous-texte` (optionnel) — voix historiques, retenue et révélation par la parole
+- `@premisse-theme-noyau` (optionnel) — sélection de matière historique, angle et démonstration du thème
+- `@fabrication-scene` (optionnel) — matérialiser l'histoire par actions, objets et détails d'époque
+- `@structure-recits` (optionnel) — forme historique, non-linéarité, lignes chorales et cohérence temporelle
 
 **Livrables** : fiche de cadrage historique, figures réelles, point de jonction Histoire/mythologie, sources, projets de notes de bas de page, propositions d'annexes, positionnement dans l'arc du chapitre.
 
@@ -79,6 +99,12 @@ Conçoit la structure de tension, de révélation et de menace. Fusion des méca
 - `@rigueur-historique` (utilise) — crédibilité des scènes d'enquête
 - `@structure-chapitre` (propriétaire partagé) — cartographie de tension dans l'arc
 - `@frameworks-narratifs` (utilisateur) — référence pour les structures de tension (Fichtean, Story Grid, Scene and Sequel)
+- `@etudes-cas-americains` (optionnel) — méthode « mais », masques, indices et paiement des révélations
+- `@personnages-et-conflits` (optionnel) — escalade, transitions émotionnelles et crise-climax-résultat
+- `@dialogues-et-sous-texte` (optionnel) — beats action/réaction, exposition différée et chutes dialoguées
+- `@premisse-theme-noyau` (optionnel) — noyau de scène, logline interne et contrôle de l'arc
+- `@fabrication-scene` (optionnel) — beats action/réaction, point de bascule et chute de section
+- `@structure-recits` (optionnel) — progression des complications, crise, climax et conclusion
 
 **Livrables** : question dramatique, indices à semer, point de bascule/chute, point de vue optimal, proposition de scène brute, cartographie de tension par phase.
 
@@ -110,6 +136,8 @@ Relit une scène ou un chapitre finalisé avec le regard d'un lecteur exigeant d
 - `@canon-univers` (contrôleur) — continuité mythologique et narrative
 - `@rigueur-historique` (contrôleur) — vraisemblance et anachronismes
 - `@mecanique-tension` (lecteur) — enjeux, révélations et chutes
+- `@dramaturgie-tchekhovienne` (lecteur optionnel) — repère les scènes trop frontales et propose hors-champ, silences, objets-thèmes ou décalages de dialogue
+- `@minimalisme-ozu` (lecteur optionnel) — vérifie ellipses, objets-relais, lieux vides et émotions dites par l'après-coup
 - `@structure-chapitre` (lecteur) — arc dramatique et progression
 
 **Livrables** : verdict de lecture, points forts, remarques hiérarchisées, contrôles de cohérence, avis de lecteur passionné et priorités de révision. Wilfried ne produit pas de prose finale.

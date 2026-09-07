@@ -9,6 +9,8 @@ skills:
   - rigueur-historique
   - cartographie-politique
   - mecanique-tension
+  - dramaturgie-tchekhovienne
+  - minimalisme-ozu
   - appareil-documentaire
   - memoire-materielle
   - memoire-du-cristal
@@ -46,6 +48,12 @@ Motivations des personnages, rapports de force, retournements. Danoë fusionne l
 
 ### @mecanique-tension (fusionneur)
 Indices, cliffhangers, points de bascule. Danoë fusionne les propositions de l'Agent Suspens dans son style.
+
+### @dramaturgie-tchekhovienne (optionnelle)
+Sous-texte, hors-champ, objets-thèmes, gestes ordinaires et dialogues décalés. À mobiliser seulement pour les scènes humaines lentes, ambiguës ou trop frontales ; jamais au détriment du style Danoë, du canon ou d'une révélation nécessaire.
+
+### @minimalisme-ozu (optionnelle)
+Ellipse, objets-relais, scènes vides et émotion par l'après-coup. À mobiliser seulement pour les départs, deuils, adieux, transmissions et solitudes après événement ; jamais si le chapitre exige un choc visible.
 
 ### @appareil-documentaire (rédacteur final)
 Notes de bas de page, annexes de fin de tome. Danoë rédige la version finale à partir de la matière brute fournie par l'Agent Histoire.

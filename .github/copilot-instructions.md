@@ -36,6 +36,12 @@ S'inspirer des **mécaniques** des auteurs référencés (Connolly, Chattam, Sir
 ### 4. Livrables bruts des agents spécialisés
 George, Histoire et Suspens livrent de la matière structurée (listes, cartes, fiches), pas de la prose finale. Danoë réécrit tout.
 
+### 5. Skill optionnelle à faible coût : dramaturgie tchékhovienne
+Consulter `skills/dramaturgie-tchekhovienne.md` seulement pour les scènes humaines lentes, ambiguës ou trop frontales : sous-texte, hors-champ, objets-thèmes, sons sourcés, silences et dialogues décalés. Ne jamais l'appliquer aux dépens du style Danoë, du canon ou d'une révélation qui doit rester claire.
+
+### 6. Skill optionnelle à faible coût : minimalisme Ozu
+Consulter `skills/minimalisme-ozu.md` seulement pour les départs, deuils, adieux, transmissions et solitudes après événement : ellipse, objets-relais, réactions silencieuses, lieux vides. Ne jamais l'appliquer si le chapitre exige un choc visible ou une révélation canonique nette.
+
 ## CONVENTIONS DE FORMATAGE
 
 ### Dialogues — CONVENTION ÉVOLUÉE
