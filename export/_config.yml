@@ -1,0 +1,7 @@
+title: Les Schattenjagers
+description: Documents narratifs et plans de travail de la saga.
+lang: fr
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
