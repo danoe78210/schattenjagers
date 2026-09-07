@@ -50,6 +50,8 @@
 | 6 | **Lignée terrestre** | Mémoire, résonance et communication avec Nunael | Déposé à Assouan en 1473 av. J.-C., transmis d'Hatchepsout aux prêtresses d'Hathor, à Déborah, aux gardiennes ioniennes, à Sapphô, à Aspasie, à Belisama, puis jusqu'à Irène, Alcuin, Marozia, Hrotsvita, Brunhilde, Lubna, Hildegarde, Alma, Mechthilde et aux Gardiens Ritter | ✅ Actif |
 | 7 | **En réserve** | [À COMPLÉTER] | Salle secrète de la Bibliothèque du Jardin | 🔒 En réserve |
 
+> **Jalon Tome 2, chapitre 45** : vers 1473 av. J.-C., la Chambre des Possibles dépose le sixième diamant dans un interstice fiction-canonique des carrières d'Assouan. Avant sa découverte par Hatchepsout, il est intact, latent, sans détenteur, sans empreinte et sans manifestation observable ; Nunael n'infléchit aucune décision humaine.
+
 #### Pouvoirs généraux des diamants bleus
 - **Télépathie** entre porteurs
 - **Visions** (passé, présent, possibles futurs)

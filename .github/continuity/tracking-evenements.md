@@ -45,6 +45,7 @@
 ### 1.2 Tome 2 : "Hildegarde" (Brouillon v1.0)
 | Chapitre | Époque / Date | Événement majeur | Personnages impliqués | Conséquences / Impact canonique |
 |---|---|---|---|---|
+| **Ch. 45 — La Pierre qui Attend** | Vers 1473 av. J.-C. | Dans la Chambre des Possibles, Nunael observe le dépôt du sixième diamant dans un interstice des carrières d'Assouan. Des décisions humaines distinctes préparent une lecture future de la royauté d'Hatchepsout comme exception provisoire ; Nunael soupçonne l'amplification de l'Étranger sans preuve ni intervention directe. | Nunael, Chambre des Possibles, agents humains anonymes, Hatchepsout (apparition finale) | Seuil du Tome 3 : le diamant demeure latent et sans porteur ; l'effacement matériel reste postérieur à la mort d'Hatchepsout et la responsabilité humaine n'est pas annulée. |
 | **Ch. 1-4** | ~1106-1136 | Hildegarde découvre le manuscrit de son père et le sceau du dragon | Hildegarde, Jutta | Déclenchement de la quête, mise en danger par les secrets. |
 | **Ch. 9-10** | ~1136 | Voyage à Fulda, rencontre avec Guillaume et Konrad, mort de Jutta | Hildegarde, Guillaume, Konrad, Jutta | Alliance formée, Hildegarde devient magistra, menace des Enfants de Lilith révélée. |
 | **Ch. 18-20** | ~1140-1150 | Meurtre de la Révérende Mère, Hildegarde devient abbesse, fondation de Rupertsberg | Hildegarde, Margreth (suspecte), Alma | Ascension au pouvoir, création du lieu de savoir (bibliothèque). |
@@ -88,6 +89,7 @@
 | Les cristaux rituels (agate, obsidienne, etc.) | Ch. 24 (Crypte) | Utilisation de ces mêmes cristaux dans un rituel majeur ou contre Hildegarde. | ⏳ En attente |
 | La phrase de Nunael : "Il y a un autre acteur en jeu" | Ch. 26 | Révélation que Lilith agit pour son propre compte, pas pour l'Étranger. | ⏳ En attente |
 | La santé déclinante d'Hildegarde | Ch. 29, 34 | Sa mort en 1179 n'est pas une défaite, mais une transition vers Alma. | ⏳ En attente |
+| La veine de granit en forme de paupière, l'ostracon de titulature et les copies soustraites | Ch. 45 | Découverte libre du diamant par Hatchepsout ; conflit futur autour de la mémoire royale et de la transmission clandestine. | ⏳ À récolter dans le Tome 3 |
 
 ---
 

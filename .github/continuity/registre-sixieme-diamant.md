@@ -12,6 +12,7 @@
 
 | Début | Fin | Détenteur | Localisation principale | Transmission ou événement | Statut |
 |---|---|---|---|---|---|
+| ~1473 av. J.-C. | Découverte ultérieure | Aucun | Interstice fiction-canonique, carrières d'Assouan | La Chambre des Possibles dépose le diamant ; il reste intact, latent, sans empreinte ni effet perceptible dans le monde matériel | Canonique romanesque |
 | ~1473 av. J.-C. | ~1458 av. J.-C. | Hatchepsout | Assouan, Thèbes, Pount, Karnak, Deir el-Bahari | Découverte à Assouan ; transmission à une prêtresse d'Hathor | Canonique romanesque |
 | ~1458 av. J.-C. | Date ouverte | Prêtresses d'Hathor | Égypte | Conservation clandestine après la mort d'Hatchepsout | Canonique romanesque |
 | Date ouverte | Fin du XIIe / début du XIe siècle av. J.-C. | Gardiens levantins | Égypte, Levant | Itinéraire et détenteurs individuels à définir | Fiction-canonique |
@@ -53,6 +54,8 @@
 | Époque contemporaine | Ouvert | Gabriel Knight | Bavière | Dernier héritier connu | Canonique romanesque |
 
 ## Pouvoirs et fragilités cumulatives
+
+> Les empreintes d'Hatchepsout s'acquièrent entre sa découverte du diamant et sa transmission vers ~1458 av. J.-C. Elles ne sont pas présentes durant l'intervalle de dépôt à Assouan.
 
 | Porteur d'origine | Pouvoir unique | Fragilité transmise | Date d'acquisition | Effet cumulé | Statut |
 |---|---|---|---|---|---|
